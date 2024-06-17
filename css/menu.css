@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+:root{
+    --bg_navbar: #333333;
+    --c_font: #f2f2f2;
+    --c_hover: #555555;
+    --c_bar: #ffffff;
+    --c_content: #636363;
+    --content_hover: #797979;
+}
+
+*{
+    font-family: 'Quicksand', sans-serif;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    color: var(--c_font);
+}
+
+.navbar_logo{
+    margin: 0.6rem;
+}
+
+.navbar_logo img{
+    width: 9vw;
+}
+
+.navbar_menu ul{
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar_menu li{
+    list-style-type: none;
+}
+
+.navbar_menu a{
+    text-decoration: none;
+    color: var(--c_font);
+    padding: 1rem;
+    display: block;
+}
+
+.navbar_menu a:hover, .dropdown:hover .drop_button{
+    background-color: var(--c_hover);
+}
+
+.dropdown .drop_button{
+    font-size: 1rem;
+    border: none;
+    outline: none;
+    background-color: inherit;
+    padding: 1rem;
+    color: inherit;
+    cursor: pointer;
+    margin: 0;
+}
+
+.drop_content{
+    display: none;
+    position: absolute;
+    background-color: var(--c_content);
+    min-width: 145px;
+    z-index: 1;
+}
+
+.drop_content a:hover{
+    background-color: var(--content_hover);
+}
+
+.dropdown:hover .drop_content{
+    display: block;
+}
+
+.navbar_button{
+    position: absolute;
+    top: 0.75rem;
+    right: 1rem;
+    display: block;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+}
+
+.navbar_button .bar{
+    height: 3px;
+    width: 100%;
+    background-color: var(--c_bar);
+    border-radius: 10px;
+    transition: 0.6s;
+}
+
+@media (max-width: 650px){
+
+    .navbar_button{
+        display: flex;
+    }
+
+    .navbar_menu{
+        display: none;
+        width: 100%;
+    }
+
+    .navbar{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar_menu ul{
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navbar_menu li{
+        text-align: center;
+    }
+
+    .navbar_menu li a{
+        padding: 1rem;
+    }
+
+    .navbar_menu.active{
+        display: flex;
+    }
+
+    .navbar_menu.active .drop_content{
+        position: relative;
+    }
+
+    .navbar_menu.active .dropdown .drop_button{
+        display: block;
+        width: 100%;
+    }
+}
+
+
+    .navbar.active .navbar_button #top{
+        transform: rotate(37deg) translate(0.9rem);
+        transition: 0.6s;
+    }
+
+    .navbar.active .navbar_button #center{
+        opacity: 0;
+        transition: 0.2s;
+    }
+
+    .navbar.active .navbar_button #bottom{
+        transform: rotate(-37deg) translate(0.9rem);
+        transition: 0.6s;
+    }
+
+

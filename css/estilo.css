@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+:root{
+    --bg: #333333;
+    --bg2: #6d1f1f;
+    --c_font: #f2f2f2;
+    --c_hover: #555555;
+    --c_bar: #ffffff;
+    --c_content: #636363;
+    --content_hover: #797979;
+    --c_shadow: #3b0101;
+}
+
+*{
+    font-family: 'Quicksand', sans-serif;
+    text-decoration: none;
+    outline: none;
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+}
+
+*::selection{
+    background: var(--c_hover);
+    color: var(--c_font);
+}
+
+.heading{
+    font-size: 5rem;
+    color: var(--c_font);
+    text-align: center;
+    margin-top: 2rem;
+    padding: 0 1rem;
+    padding-top: 2rem;
+    letter-spacing: .1rem;
+    font-weight: 500;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    background:linear-gradient(var(--bg), var(--bg2));
+}
+
+.home, .historia, .temporadas{
+    min-height: 10vh;
+    z-index: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.home .content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    padding-top: 10rem;
+    padding-bottom: 3rem;
+    text-align: center;
+}
+
+.home .content h1{
+    font-size: 2rem;
+    color: var(--c_font);
+    padding: 0 1 rem;
+    text-shadow: 0 .3rem .2rem var(--c_shadow);
+}
+
+.home .content p{
+    font-size: 1rem;
+    color: var(--c_font);
+    padding: 1rem 8rem;
+}
+
+.historia .content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    padding: 2rem 1rem;
+    text-align: justify;
+}
+
+.historia .content h1{
+    font-size: 2rem;
+    color: var(--c_font);
+    padding: 1rem 0;
+    text-shadow: 0 .2rem .5rem #000000;
+}
+
+.historia .content p{
+    font-size: 1rem;
+    color: var(--c_font);
+    padding: 1rem 8rem;
+}
+
+ .temporadas .content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    text-align: center;
+}
+
+.temporadas .content h1{
+    font-size: 2rem;
+    color: var(--c_font);
+    padding: 1rem 0;
+    text-shadow: 0 .2rem .5rem #000000;
+}
+
+.temporadas .box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.temporadas .box_container .box{
+    background-color: var(--c_content);
+    border: 0.2rem solid var(--content_hover);
+    cursor: pointer;
+    margin: 0.5rem 5rem;
+}
+
+
+.temporadas .box_container .box button{
+    font-size: 1.3rem;
+    font-weight: 700;
+    border: none;
+    outline: none;
+    background-color: inherit;
+    padding: 0.5rem 2rem;
+    width: 80vw;
+    color: var(--c_shadow);
+    cursor: pointer;
+    margin: 0;
+}
+
+.box_content{
+    display: none;
+    color: var(--c_font);
+    background-color: var(--content_hover);
+    padding: 2rem;
+    width: 80vw;
+
+}
+
+.box_content.active{
+    display: block;
+}
+
+.personagens .content .card-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 5rem 0;
+}
+
+.personagens .content .card-container .card{
+    padding: 2rem;
+    margin: 4rem;
+    text-align: center;
+    background-color: var(--c_bar);
+    width: 15rem;
+    box-shadow: 0 .3rem .5rem var(--c_shadow);
+}
+
+.personagens .content .card-container .card img{
+    line-height: 15rem;
+    text-align: center;
+    color: var(--c_font);
+    margin-top: -8rem;
+    font-size: 3.5rem;
+    width: 90%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.personagens .content h1{
+    font-size: 2rem;
+    color: var(--c_font);
+    padding: 1rem 0;
+    text-shadow: 0 .2rem .5rem #000000;
+}
+
+.footer{
+    text-align: center;
+}
+
+.footer .creditos{
+    font-size: 2rem;
+    border-top: .1rem solid #999;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+    color: #666;
+    width: 90%;
+    padding: 1rem 0;
+}
+
+@media (max-width:768px){
+
+    section{
+        padding: 5rem 0;
+        margin: 5rem 0;
+    }
+
+    .home .content p,
+    .historia .content p{
+        padding: 1.5rem 2rem;
+    }
+
+
+    .personagens .content .box-container{
+        width: 100%;
+    }
+}
